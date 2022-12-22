@@ -1,0 +1,71 @@
+<div class="container title mt-5">
+    <div class="row">
+        <div class="col">
+            <h1>Contact Management Application
+                <a routerLink="/contacts/add" class="btn btn-success ms-5">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add New
+                </a>
+            </h1>
+            <p style="text-align: justify;" class="mt-5 p-3">
+                This is a dummy data : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum architecto accusantium, sequi ab laboriosam dolorum harum ex consequatur, at rem modi quibusdam cupiditate animi, vel optio atque eligendi sed iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cupiditate quibusdam assumenda, quae possimus rerum dicta reprehenderit, omnis officia iste sequi consequuntur similique culpa earum ab accusantium? Veniam, molestias laboriosam!
+            </p>
+            <div class="row mt-5 ms-5">
+                <div class="col-8">
+                    <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search Contact Name">
+                </div>
+                <!-- <div class="col-6">
+                    <button class="btn btn-outline-success text-success">Search</button>
+                </div> -->
+            </div>
+
+                
+           <!--  <pre>
+                {{allContacts | json}}
+            </pre> -->
+
+
+            <!-- card design -->
+            <div class="container mt-5 mb-5">
+                <div class="row">
+                    <div class=" col-md-6 mt-4" *ngFor="let contact of allContacts | filter :searchKey: 'name' ">
+                        
+                            <div class="card list-group-item-secondary">
+                                <div class="card-body border border-success">
+                                    <div class="row align-items-center">
+                                    <div class=" col-3 col-md-3">
+                                       <!-- contact img -->
+                                         <img [src]="contact.photo" alt="" class="contact_img">
+                                    </div>
+                                        <!-- contact details -->
+                                    <div class="col-7 col-md-7 ">
+                                         <div class="card w-100 ms-2">
+                                              <ul class="list-group list-group-flush">
+                                                   <li class="list-group-item">Name : <b>{{contact.name}}</b></li>
+                                                   <li class="list-group-item">Email : <b>{{contact.email}}</b></li>
+                                                    <li class="list-group-item">Mobile : <b>{{contact.mobile}}</b></li>
+                                              </ul>
+                                        </div>
+                                    </div>
+                                    <div class=" col-2 col-md-2  d-flex flex-column justify-content-center align-items-center">
+                                        <!-- view -->
+                                        <a routerLink="/contacts/view/{{contact.id}}" class="btn btn-success"><i class="fa-solid fa-eye text-light"></i></a>
+                                        <!-- edit -->
+                                        <a routerLink="/contacts/edit/{{contact.id}}" class="btn btn-warning mt-1">
+                                            <i class="fa-solid fa-pen text-light"></i>
+                                        </a>
+                                        <!-- delete -->
+                                        <button class="btn btn-danger mt-1">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

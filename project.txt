@@ -1,0 +1,43 @@
+                  contact management app
+
+
+       1. create a angular project.
+       2. installing bootstrap and fortawesome -  npm i bootstrap @fortawesome/fontawesome-free
+       3. paste cdn link of font awesome in index.html
+       4. configure bootstrap and font awesome in angular.json
+       5. configure google font in style.css/ index.html - if script is copied then paste in style.css
+                                                            otherwise copy link and paste in index.html
+
+       6. check al works fine.
+       7. create components needed to display webpage
+            - contactManger : to view all contact
+            - addContact - add a new contact
+            - updateContact - to edit the existing contact
+            - viewContact - to view a particular contact => ng g c componentname
+            - pageNotFound - to display page not found
+            - navbar - place its selector inside root component html page since navbar is present in all pages.
+        8. set up the path for each components inorder to view it in browser
+           - set up path for each components in app.routing.module.ts => routes array
+             => {path:'contacts/admin', component:ContactManagerComponent}   
+                give import by clicking blue bulb  
+             => in app.component.html add router-outlet selector for displaying different webpage as per user request
+         9. set  up the server api-
+                     - create server folder inside the project
+                     - create db.json file
+                     -open cmd from server folder
+                       -create package.json file - command -npm init then enter for all questions
+                       -install json-server (library) inside server folder to run json--command-npm i json-server
+                       -update package.json file script as
+                            -"scripts": {
+                                          "start": "json-server --watch db.json --port 3000"
+                                          },
+                       - to run server use command: npm start
+                       - take browse that take localhost:3000
+         10. create model for contacts and group
+                -create model folder in src folder
+                -create mycontact.ts file  
+                - create myGroup.ts file  
+         11. create an angular service for making api call.
+         12. to get http method -get, post, put, patch, delete
+                  - import HttpClientModule in app.module.ts                                    
+                  - dependency inject Httpclient in api serive ts file

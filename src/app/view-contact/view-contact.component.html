@@ -1,0 +1,46 @@
+<div class="container title mt-4">
+    <div class="row">
+        <div class="col">
+            <h1><i class="fa-solid fa-eye text-success ms-3"></i> &nbsp; View Contact Page</h1>
+            <p style="text-align: justify;" class="mt-5 p-3">
+                This is a dummy data : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum architecto accusantium, sequi ab laboriosam dolorum harum ex consequatur, at rem modi quibusdam cupiditate animi, vel optio atque eligendi sed iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cupiditate quibusdam assumenda, quae possimus rerum dicta reprehenderit, omnis officia iste sequi consequuntur similique culpa earum ab accusantium? Veniam, molestias laboriosam!
+            </p>
+        </div>
+    </div>
+
+
+   <!--  <pre>{{groupName| json }}</pre> -->
+        
+   
+
+    <!-- view contact -->
+
+
+    <div class="container mt-5 mb-5 border border-success">
+        <div class="row  border p-4">
+            <div class="col-md-4">
+                <img width="290px" height="300px" [src]="contact.photo" alt="">
+
+            </div>
+            <div class="col-md-8 ">
+                <h4 class="text-success mt-1">Details</h4>
+                <ul class="list-group mt-3">
+                    <li class="list-group-item list-group-item-success">Name : <b>{{contact.name}}</b></li>
+                    <li class="list-group-item">Email : <b>{{contact.email}}</b></li>
+                    <li class="list-group-item">Mobile : <b>{{contact.mobile}}</b></li>
+                    <li class="list-group-item">Company : <b>{{contact.company}}</b></li>
+                    <li class="list-group-item">Title : <b>{{contact.title}}</b></li>
+                    <li class="list-group-item">Group : <b>{{groupName}}</b></li>
+
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- back -->
+
+    <div class="container mb-3">
+        <div class="row justify-content-center">
+            <a class="btn btn-danger w-25 " routerLink="/"><i class="fa-solid fa-circle-left"></i> Back</a>
+        </div>
+    </div>
