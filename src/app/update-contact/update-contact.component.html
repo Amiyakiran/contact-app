@@ -7,45 +7,57 @@
             </p>
         </div>
     </div>
+
+
+   <!--  <pre>{{groups  | json}}</pre> 
+ -->
+
     <!-- add contact form -->
     <div class="container">
         <div class="row">
             <div class="col-md-6 border p-3 rounded ms-2">
                 <form >
-                    <div class="mb-2">
-                        <input placeholder="Name" type="text" class="form-control">
+                    <div class="mb-2 d-flex">
+                        <label for="cName" class="mt-2">Name:</label>
+                        <input name="cName" [(ngModel)]="contact.name" placeholder="Name" type="text" class="form-control ms-4">
                     </div>
-                    <div class="mb-2">
-                        <input placeholder="Photo URL" type="text" class="form-control">
+                    <div class="mb-2  d-flex">
+                        <label for="cName" class="mt-2">Photo URL:</label>
+                        <input name="photo" [(ngModel)]="contact.photo" placeholder="Photo URL" type="text" class="form-control ">
                     </div>
-                    <div class="mb-2">
-                        <input placeholder="Email ID" type="text" class="form-control">
+                    <div class="mb-2  d-flex">
+                        <label for="cName" class="mt-2">Email:</label>
+                        <input name="email" [(ngModel)]="contact.email" placeholder="Email ID" type="text" class="form-control ms-4">
                     </div>
-                    <div class="mb-2">
-                        <input placeholder="Mobile Number" type="text" class="form-control">
+                    <div class="mb-2  d-flex">
+                        <label for="cName" class="mt-2">Mobile:</label>
+                        <input name="mobile" [(ngModel)]="contact.mobile" placeholder="Mobile Number" type="text" class="form-control ms-3">
                     </div>
-                    <div class="mb-2">
-                        <input placeholder="Company Name" type="text" class="form-control">
+                    <div class="mb-2  d-flex">
+                        <label for="cName" class="mt-2">Co:</label>
+                        <input name="company" [(ngModel)]="contact.company" placeholder="Company Name" type="text" class="form-control ms-5">
                     </div>
-                    <div class="mb-2">
-                        <input placeholder="Title" type="text" class="form-control">
+                    <div class="mb-2  d-flex">
+                        <label for="cName" class="mt-2">Title: </label>
+                        <input name="title" [(ngModel)]="contact.title" placeholder="Title" type="text" class="form-control ms-4">
                     </div>
-                    <div class="mb-2 mt-3">
-                        <select name="" id="" class="form-control">
+                    <div class="mb-2 mt-3  d-flex">
+                        <label for="cName" class="mt-2">Group:</label>
+                        <select name="groupId" [(ngModel)]="contact.groupId" id="" class="form-control ms-3">
                             <option value="" selected hidden disabled >Select A Group</option>
-                            <option value="">Family</option>
-                            <option value="">Friends</option>
+                            <option value="group.id" *ngFor="let group of groups">{{group.name}}</option>
 
                         </select>
                     </div>
                     <div class="mb-2 mt-3">
-                        <input value="Update" type="button" class="btn btn-success">
+                        <input value="Update" (click)="updateContact()" type="button" class="btn btn-success">
                         <a routerLink="/" class="btn btn-danger ms-3">close</a>
                     </div>
                 </form>
             </div>
             <div class="col-md-4 ms-5 mb-5 mt-4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhW8b0LPFmij-bk9cyYYO4jdFN-1AYlEE75qEXzQqJS55MfelYNdF4YeebTMFz1_9catY&usqp=CAU" alt="" class="contact_img border border-success">
+                <!-- https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhW8b0LPFmij-bk9cyYYO4jdFN-1AYlEE75qEXzQqJS55MfelYNdF4YeebTMFz1_9catY&usqp=CAU -->
+                <img [src]="contact.photo" alt="" class=" border border-success" width="250px" height="300px">
 
             </div>
         </div>
