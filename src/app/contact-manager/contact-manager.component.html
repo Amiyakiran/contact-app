@@ -12,7 +12,7 @@
             </p>
             <div class="row mt-5 ms-5">
                 <div class="col-8">
-                    <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search Contact Name">
+                    <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search Name">
                 </div>
                 <!-- <div class="col-6">
                     <button class="btn btn-outline-success text-success">Search</button>
@@ -55,7 +55,7 @@
                                             <i class="fa-solid fa-pen text-light"></i>
                                         </a>
                                         <!-- delete -->
-                                        <button class="btn btn-danger mt-1">
+                                        <button (click)="deleteContact(contact.id)" class="btn btn-danger mt-1">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </div>
